@@ -1,5 +1,6 @@
-# Frontend Development related code.
-***please do not push non-working code!***
+# Frontend
+Web based fronted related code for BuildPC project.
+***please do not push non-working code to the `master` branch!***
 
 ## Steps to create a working environment!
 
@@ -9,8 +10,8 @@
 4. create a directory where the project will reside.
 5. cd into the directory.
 6. by using *laravel new <project_name>* create a new laravel project.
-7. clone the repo here!
+7. clone the repo there!
 8. run "npm install" to have webpack mix
 9. make sure "npm run dev" successfully runs.
 10. enjoy the laravel.
-11. Changes made can be direcly pushed to the repo! (Make sure it works before pushing any changes.)
+11. Changes made can be direcly pushed to the repo! (Make sure you push into a branch rather than the master.)
