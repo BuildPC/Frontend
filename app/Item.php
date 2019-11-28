@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model{
 
-    protected $primaryKey;
-    protected $fillable;
+    protected $primaryKey = "item_id";
+    protected $connection = "mysql2";
 }

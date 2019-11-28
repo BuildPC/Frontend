@@ -24,9 +24,8 @@ class MainController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
-    public function items(){
-        return $this->hasMany(Item::class);
+        $items = \DB::connection('mysql2')->table('Item')->get();
+//        dd($items);
+        return view('home',['items' =>$items]);
     }
 }
