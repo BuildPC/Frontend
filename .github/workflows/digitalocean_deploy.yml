@@ -16,8 +16,8 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
     - name: Get the Files
+    - uses: actions/checkout@master
 #     - name: Build the app
 #       run: |
 #         php -r "file_exists('.env') || copy('.env.example','.env');"
