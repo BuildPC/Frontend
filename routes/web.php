@@ -17,5 +17,12 @@ Route::get('/home', 'MainController@index');
 
 Auth::routes();
 
+//Route::get('/sidebar',function(){
+//    return view('categories');
+//});
+
+Route::get('/category','CategoryController@getItems');
+Route::get('/category/{category_id}','CategoryController@getItems')->name('category_id');
+
 //Route::get('/home', 'MainController@index')->name('home');
 Route::get('/item/{item}','ItemsController@index')->name('item');
