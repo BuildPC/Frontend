@@ -44,4 +44,6 @@ jobs:
           php artisan key:generate
           npm install
           npm run production
+          chgrp -R www-data ${{env.DIR}}
+          chmod -R 775 ${{env.DIR}}
         
