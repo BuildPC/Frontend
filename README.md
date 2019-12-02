@@ -1,3 +1,6 @@
+![](https://github.com/BuildPC/Frontend/workflows/laravel/badge.svg)
+![](https://github.com/BuildPC/Frontend/workflows/digitalocean_deploy/badge.svg)
+
 # Frontend
 Web based fronted related code for BuildPC project.
 ***please do not push non-working code to the `master` branch!***
