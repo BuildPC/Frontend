@@ -2,7 +2,9 @@
 ![](https://github.com/BuildPC/Frontend/workflows/DigitalOcean_Deploy/badge.svg)
 
 # Frontend
-Web based fronted related code for BuildPC project.
+Web based fronted related code for BuildPC project.  
+All the code in the `master` branch is deployed to the DigitalOcean server after confirming the code works. You may access to the deployed site from this [link](https://test.buildpc.software).  
+
 ***please do not push non-working code to the `master` branch!***
 
 ## Steps to create a working environment!
@@ -17,4 +19,6 @@ Web based fronted related code for BuildPC project.
 8. run "npm install" to have webpack mix
 9. make sure "npm run dev" successfully runs.
 10. enjoy the laravel.
-11. Changes made can be direcly pushed to the repo! (Make sure you push into a branch rather than the master.)
+11. Changes made can be direcly pushed to the repo! (Make sure you push into a branch rather than the master.)  
+
+*If you have any questions please feel free to open an Issue ask there!*
