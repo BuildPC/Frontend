@@ -1,4 +1,4 @@
-name: DigitalOcean Server Deploy using SCP
+name: DigitalOcean_Deploy
 
 on: 
   push:
