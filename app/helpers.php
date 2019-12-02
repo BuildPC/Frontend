@@ -3,7 +3,7 @@ function createItemCard($item){
     echo '
         <div class="col-3">
             <div class="card">
-                <img src="'.$item->photo.'" class="card-img-top" alt="">
+                <img data-src="'.$item->photo.'" class="card-img-top lazy" alt="">
                 <div class="card-body">
                     <h5 class="card-title">'.$item->item_name.'</h5>
                     <p class="card-text">'.$item->item_desc.'</p>
