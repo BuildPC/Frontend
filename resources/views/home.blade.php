@@ -1,7 +1,7 @@
 @extends("layouts.app")
 @section('content')
     <div class="container pt-5">
-        <div class="row">
+        <div class="card-columns">
             @foreach ($items as $item)
 {{--                <div class="col-3">--}}
 {{--                    <div class="card">--}}

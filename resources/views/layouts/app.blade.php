@@ -14,6 +14,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.4.0/dist/lazyload.min.js"></script>
+    <script src="https://unpkg.com/popper.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        });
+    </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -123,7 +129,8 @@
         console.log("lazy");
         lazyLoadInstance.update();
     }
-    setTimeout(loadLazy,1);
+
+    setTimeout(loadLazy, 1);
 
     // Set the options to make LazyLoad self-initialize
 

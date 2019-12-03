@@ -9,24 +9,25 @@
         <div class="sidebar-button-wrapper">
                 <div class="bg-light border-right" id="sidebar-wrapper">
                     <div class="list-group list-group-flush">
+{{--                        TODO when a category is selected from the sidebar, update the contents accordingly! no page refresh, and highlight the selected category--}}
                         <span href="#" class="list-group-item active sidebar-heading">Categories</span>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-comment-o"></i> Lorem ipsum
+                        <a href="/category/0" class="list-group-item list-group-item-action">
+                            <i class="fa fa-comment-o"></i> Motherboards
                         </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-search"></i> Lorem ipsum
+                        <a href="/category/1" class="list-group-item list-group-item-action">
+                            <i class="fa fa-search"></i> CPUs
                         </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-user"></i> Lorem ipsum
+                        <a href="/category/2" class="list-group-item list-group-item-action">
+                            <i class="fa fa-user"></i> GPUs
                         </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-folder-open-o"></i> Lorem ipsum <span class="badge">14</span>
+                        <a href="/category/3" class="list-group-item list-group-item-action">
+                            <i class="fa fa-folder-open-o"></i> SSDs <span class="badge">14</span>
                         </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-bar-chart-o"></i> Lorem ipsumr <span class="badge">14</span>
+                        <a href="/category/4" class="list-group-item list-group-item-action">
+                            <i class="fa fa-bar-chart-o list-group-item-action"></i> Monitors <span class="badge">14</span>
                         </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-envelope"></i> Lorem ipsum
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <i class="fa fa-envelope"></i> ...
                         </a>
                     </div>
                 </div>
@@ -49,7 +50,7 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <h1 class="mt-2 font-weight-bold text-center" style="font-size: 200%">Category name placeholder</h1>
-                <div class="row">
+                <div class="card-columns">
                     {{--        <div class="container-fluid">--}}
                     {{--            <h1 class="mt-4">Simple Sidebar</h1>--}}
                     {{--            <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>--}}

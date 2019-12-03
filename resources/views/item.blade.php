@@ -11,9 +11,10 @@
                 <div class="text-center">
                     <h2 class="font-weight-bold pb-2" style="color:#2a9055;">&#x20BA {{$item->price}}</h2>
                     @guest
-                        <buton class="btn btn-primary" onclick='alert("you need to sign in")'>Add to Basket</buton>
+{{--                        TODO delay not working FIX!--}}
+                        <button class="btn btn-primary"id="addBtn" data-toggle="popover" data-trigger="click" title="Error!" data-delay-hide="2500" data-content="You must first sign in." onclick="$('#addBtn').addClass('btn-danger').attr('disabled',true)">Add to Basket</button>
                     @else
-                        <buton class="btn btn-primary" onclick='alert("added")'>Add to Basket</buton>
+                        <button class="btn btn-primary" id="addBtn" data-toggle="popover" data-trigger="focus" title="Success!" data-content="Item successfully added to your basket!." onclick="$('#addBtn').addClass('btn-success')">Add to Basket</button>
                     @endguest
                     <p class="pt-5 font-weight-bold" style="font-size: large">{{$item->item_desc}}</p>
                 </div>
