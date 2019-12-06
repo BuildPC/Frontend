@@ -24,13 +24,13 @@ jobs:
         args: '-c -q -P -z -r'
         ssh_before: echo "test"
         ssh_after: |
-          cd ${{env.DIR}}
+          cd ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}
           composer require "laravel/installer"
           composer install -q --no-ansi --no-interaction --no-suggest --no-progress --prefer-dist
-          cp ../private/.env ${{env.DIR}}
+          cp ../private/.env ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}
           php artisan key:generate
           npm install
           npm run production
-          chgrp -R www-data ${{env.DIR}}
-          chmod -R 775 ${{env.DIR}}
+          chgrp -R www-data ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}
+          chmod -R 775 ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}
 
