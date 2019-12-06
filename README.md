@@ -1,5 +1,5 @@
 ![](https://github.com/BuildPC/Frontend/workflows/Laravel_Tests/badge.svg)
-![](https://github.com/BuildPC/Frontend/workflows/DigitalOcean_Deploy/badge.svg)
+![](https://github.com/BuildPC/Frontend/workflows/DigitalOcean_Deploy_rsync/badge.svg)
 
 # Frontend
 Web based fronted related code for BuildPC project.  
