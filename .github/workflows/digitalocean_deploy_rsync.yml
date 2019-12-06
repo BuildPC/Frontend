@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Get the Files
-      run: echo "maybe?
+      run: echo "maybe?"
     - name: Deploy
       uses: BuildPC/rsync-with-ssh-github-actions@master
       with:
