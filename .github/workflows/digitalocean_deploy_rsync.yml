@@ -1,4 +1,4 @@
-#dummy change
+#dummy change to trigger
 name: DigitalOcean_Deploy_rsync
 
 on:
