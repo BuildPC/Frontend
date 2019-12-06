@@ -1,8 +1,8 @@
 name: Hercules_Insights
 
 on:
-  push:
-    branches: master
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   hercules_charts:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Hercules Checkout
-        uses: src-d/hercules@master
+        uses: src-d/hercules@10.6.2
       - uses: actions/upload-artifact@master
         with:
           name: hercules_charts
