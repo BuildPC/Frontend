@@ -9,16 +9,15 @@ All the code in the `master` branch is deployed to the DigitalOcean server after
 
 ## Steps to create a working environment!
 
-1. download and install php
-2. download and install composer
-3. install laravel using *composer global require laravel/installer* in the terminal.(Make sure composer executable is added to the PATH windows only.)
-4. create a directory where the project will reside.
-5. cd into the directory.
-6. by using *laravel new <project_name>* create a new laravel project.
-7. clone the repo there!
-8. run "npm install" to have webpack mix
-9. make sure "npm run dev" successfully runs.
-10. enjoy the laravel.
-11. Changes made can be direcly pushed to the repo! (Make sure you push into a branch rather than the master.)  
+1. download and install php7.4.0 from this [link](https://windows.php.net/downloads/releases/php-7.4.0-Win32-vc15-x64.zip). ***Note, please copy all the files to `C:\php` for an easy installation***.
+2. cd into `C:\php` and in php.ini file enable extension=fileinfo, extension=openssl, extension=pdo_mysql, extension=pdo_sqlite by removing the comma(`;`) at the beginning of the respective lines.
+3. add `C:\php` and all of its sub-directories to `Environmental Variables` of the user or system.
+4. download and install composer from this [link](https://getcomposer.org/Composer-Setup.exe).
+5. download and install nodejs 13.3.0 from this [link](https://nodejs.org/dist/v13.3.0/node-v13.3.0-x64.msi).
+6. clone the repo (duh!) and cd into the folder.
+7. run "npm install" to have webpack mix
+8. make sure "npm run dev" successfully runs.
+9. enjoy the laravel.
+10. Changes made can be direcly pushed to the repo! (Make sure you push into a branch rather than the master.)  
 
-*If you have any questions please feel free to open an Issue ask there!*
+*If you have any questions please feel free to open an issue ask there!*
