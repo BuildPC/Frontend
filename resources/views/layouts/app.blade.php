@@ -126,7 +126,7 @@
             elements_selector: ".lazy"
             // ... more custom settings?
         });
-        console.log("lazy");
+        // console.log("lazy");
         lazyLoadInstance.update();
     }
 

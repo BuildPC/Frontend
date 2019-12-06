@@ -5,7 +5,8 @@
         <h1 class="text-center font-weight-bolder pb-2" style="color:#5d561b">{{$item->item_name}}</h1>
         <div class="row">
             <div class="col-6">
-                <img class="rounded-circle" style="height: 500px;width: auto" src="{{$item->photo}}">
+{{--                //TODO see below line and remove hardcoded linking!--}}
+                <img class="rounded-circle" style="height: 500px;width: auto" src="https://test.buildpc.software/photos/{{$item->photo}}">
             </div>
             <div class="col-6">
                 <div class="text-center">
