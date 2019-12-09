@@ -22,7 +22,7 @@ jobs:
         user: ${{secrets.DIGITALOCEAN_USER}}
         port: 22
         destination: ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}
-        args: '-c -q -P -z -r'
+        args: '-c -q -P -z -r --delete'
         ssh_before: echo "test"
         ssh_after: |
           cd ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}
