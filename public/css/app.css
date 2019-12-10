@@ -11111,6 +11111,7 @@ a.text-dark:focus {
   padding: 0.875rem 1.25rem;
   font-size: 1.2rem;
   background-color: purple;
+  color: white;
 }
 
 #sidebar-wrapper .list-group {
