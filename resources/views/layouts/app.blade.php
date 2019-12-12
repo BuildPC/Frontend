@@ -15,6 +15,7 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.4.0/dist/lazyload.min.js"></script>
     <script src="https://unpkg.com/popper.js"></script>
+    <script src="https://kit.fontawesome.com/1539a4ad66.js" crossorigin="anonymous"></script>
     <script>
         $(function () {
             $('[data-toggle="popover"]').popover()
@@ -79,6 +80,17 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
+
+
+                    <li class="nav-item pt-2">
+                        <i class="fas fa-shopping-cart"></i>
+                    </li>
+
+                    <!-- shopping cart link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/shoppingCart">Shopping Cart <span class="sr-only">(current)</span></a>
+                    </li>
+
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">

@@ -28,4 +28,9 @@ class MainController extends Controller
 //        dd($items);
         return view('home',['items' =>$items]);
     }
+    public function ShoppingCart(){
+        $items = \DB::connection('mysql2')->table('Item')->get();
+//        dd($items);
+        return view('shoppingCart',['items' =>$items]);
+    }
 }
