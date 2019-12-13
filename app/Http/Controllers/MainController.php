@@ -28,12 +28,4 @@ class MainController extends Controller
 //        dd($items);
         return view('home',['items' =>$items]);
     }
-    public function ShoppingCart(){
-        $user_email = \Auth::user()->email;
-        $basket_id = \DB::table('Basket')->where('username','=',$user_email)->max('basket_id');
-        $items = \DB::table('BContains')->where('basket_id','=',$basket_id)->get();
-
-//        dd($items);
-        return view('shoppingCart',['items' =>$items]);
-    }
 }
