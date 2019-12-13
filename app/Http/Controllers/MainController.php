@@ -29,7 +29,10 @@ class MainController extends Controller
         return view('home',['items' =>$items]);
     }
     public function ShoppingCart(){
-        $items = \DB::connection('mysql2')->table('Item')->get();
+        $user_email = \Auth::user()->email;
+        $basket_id = \DB::table('Basket')->where('username','=',$user_email)->max('basket_id');
+        $items = \DB::table('BContains')->where('basket_id','=',$basket_id)->get();
+
 //        dd($items);
         return view('shoppingCart',['items' =>$items]);
     }
