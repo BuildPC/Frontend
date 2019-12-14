@@ -12,20 +12,22 @@
                                     <div class="p-2 px-3 text-uppercase">Product</div>
                                 </th>
                                 <th scope="col" class="border-0 bg-light">
-                                    <div class="py-2 text-uppercase">Price</div>
+                                    <div class="py-2 text-uppercase">Unit Price</div>
                                 </th>
                                 <th scope="col" class="border-0 bg-light">
-                                    <div class="py-2 text-uppercase">Quantity</div>
+                                    <div class="py-2 text-uppercase">Total Price</div>
                                 </th>
                                 <th scope="col" class="border-0 bg-light">
-                                    <div class="py-2 text-uppercase">Remove</div>
+                                    <div class="py-2 text-uppercase">Amount</div>
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($items as $item)
-                                {{createBasketItemCard($item)}}
-                            @endforeach
+
+                            @for($i = 0; $i < sizeof($items); $i++)
+                                {{createBasketItemCard($items[$i],$amounts[$i])}}
+
+                            @endfor
                             </tbody>
                         </table>
                     </div>

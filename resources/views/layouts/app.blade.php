@@ -80,17 +80,6 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-
-
-                    <li class="nav-item pt-2">
-                        <i class="fas fa-shopping-cart"></i>
-                    </li>
-
-                    <!-- shopping cart link -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/shoppingCart">Shopping Cart <span class="sr-only">(current)</span></a>
-                    </li>
-
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
@@ -102,6 +91,15 @@
                             </li>
                         @endif
                     @else
+                        <!-- shopping cart icon -->
+                        <li class="nav-item pt-2">
+                            <i class="fas fa-shopping-cart"></i>
+                        </li>
+
+                        <!-- shopping cart link -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/shoppingCart">Shopping Cart <span class="sr-only">(current)</span></a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
