@@ -22,7 +22,7 @@ jobs:
         user: ${{secrets.DIGITALOCEAN_USER}}
         port: 22
         destination: ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}
-        args: "-c -q -P -z -r --filter 'protect ./public/photos/*' --filter 'protect ./storage/**/*' --delete"
+        args: "-c -q -P -z -r --filter 'protect ./public/photos/*' --exclude ./storage --delete"
         ssh_before: cd ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}
         ssh_after: |
           composer install -q --no-ansi --no-interaction --no-suggest --no-progress --prefer-dist
