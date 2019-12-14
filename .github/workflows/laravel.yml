@@ -24,7 +24,7 @@ jobs:
         DB_CONNECTION: mysql
         DB_HOST: buildpc.software
         DB_PORT: 3306
-        DB_DATABASE: ${{secrets.DIGITALOCEAN_DB}}
+        DB_DATABASE: ${{secrets.DIGITALOCEAN_DB_DATABASE}}
         DB_USERNAME: ${{secrets.DIGITALOCEAN_DB_USER}}
         DB_PASSWORD: ${{secrets.DIGITALOCEAN_DB_PASS}}
       run: vendor/bin/phpunit
