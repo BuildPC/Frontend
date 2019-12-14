@@ -22,8 +22,8 @@ jobs:
         user: ${{secrets.DIGITALOCEAN_USER}}
         port: 22
         destination: ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}
-        args: '-c -q -P -z -r --delete --exclude ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}/public/photos'
-        ssh_before: echo "test"
+        args: '-c -q -P -z -r --delete --filter "protect public/photos" --filter "protect ./storage"'
+        ssh_before: cd ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}
         ssh_after: |
           cd ${{secrets.DIGITALOCEAN_DEPLOY_DIR}}
           composer require "laravel/installer"
