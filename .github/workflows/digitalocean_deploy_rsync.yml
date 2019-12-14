@@ -30,8 +30,4 @@ jobs:
           php artisan key:generate
           npm install
           npm run production
-          shopt -s extglob
-          chgrp -R www-data !(storage)
-          chmod -R 775 !(storage)
-          shopt -u extglob
 
