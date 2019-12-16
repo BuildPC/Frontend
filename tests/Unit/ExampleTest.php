@@ -7,7 +7,8 @@ use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
-    use RefreshDatabase;
+    //TODO the following code wipes the DB everytime the test runs! ooops... See https://laracasts.com/discuss/channels/laravel/laravel-phpunit-drops-database-tables the link for how to do it properly.
+//    use RefreshDatabase;
     /**
      * A basic test example.
      *
