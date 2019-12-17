@@ -3,7 +3,7 @@ function createItemCard($item){
     //TODO see line 6 and remove hardcoded linking!
     echo '
             <div class="card">
-                <img data-src="https://test.buildpc.software/photos/' . $item->photo . '" class="card-img-top lazy" alt="">
+                <img data-src="https://static.buildpc.software/photos/' . $item->photo . '" class="card-img-top lazy" alt="">
                 <div class="card-body">
                     <h5 class="card-title">' . $item->item_name . '</h5>
                     <h5 class="card-subtitle py-2 font-weight-bolder" style="background: linear-gradient(to right, blueviolet , orange, orangered, red, darkred, indianred);
