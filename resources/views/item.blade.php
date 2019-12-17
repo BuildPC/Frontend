@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-6">
 {{--                //TODO see below line and remove hardcoded linking!--}}
-                <img class="rounded-circle" style="height: 500px;width: auto" src="https://test.buildpc.software/photos/{{$item->photo}}">
+                <img class="rounded-circle" style="height: 500px;width: auto" src="https://static.buildpc.software/photos/{{$item->photo}}">
             </div>
             <div class="col-6">
                 <div class="text-center">
