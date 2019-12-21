@@ -12,7 +12,7 @@
                 type: 'POST',
                 url: '/actions/add',
                 data: data,
-                success: function(data) { alert('Save Complete') },
+                success: function(data) { $('#addBtn').addClass('btn-success');setTimeout(()=>{$('#addBtn').removeClass('btn-success');},2000)},
                 error: function(data){alert(JSON.stringify(data))}
             })
         }

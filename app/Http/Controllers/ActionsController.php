@@ -23,4 +23,10 @@ class ActionsController extends Controller
         \DB::select("call addBasket(?,?,?)",array($user_email,$item_id,$amount));
 
     }
+    public function remove(Request $request){
+        $user = \Auth::user();
+        $user_email = $user->email;
+        $item_id = $request->input('item_id');
+        \DB::select("call removeFromBasket(?,?)",array($user_email,$item_id));
+    }
 }
