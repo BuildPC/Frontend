@@ -2,17 +2,19 @@
 function createItemCard($item){
     //TODO see line 6 and remove hardcoded linking!
     echo '
+        <a class="card-link-wrapper" href="/item/'.$item->item_id.'">
             <div class="card">
                 <img data-src="https://static.buildpc.software/photos/' . $item->photo . '" class="card-img-top lazy" alt="">
                 <div class="card-body">
                     <h5 class="card-title">' . $item->item_name . '</h5>
                     <h5 class="card-subtitle py-2 font-weight-bolder" style="background: linear-gradient(to right, blueviolet , orange, orangered, red, darkred, indianred);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;">&#x20BA ' . $item->price . '</h5>
+  -webkit-text-fill-color: transparent;">&#x20BA ' . number_format($item->price,2) . '</h5>
                     <p class="card-text ellipsis">' . $item->item_desc . '</p>
                     <a href="/item/'.$item->item_id.'" class="btn btn-primary">Go to Item Page</a>
                 </div>
-       </div>';
+            </div>
+       </a>';
 };
 function createBasketItemCard($item,$amount,$sum){
     echo '

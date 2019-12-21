@@ -23,22 +23,22 @@
                 <div class="container">
                     <ul class="row">
                         <li class="col-4 btn-link">
-                            <a href="https://www.github.com/keremgure">Kerem Güre</a>
+                            <a href="https://github.com/keremgure">Kerem Güre</a>
                         </li>
                         <li class="col-4 btn-link">
-                            <a href="#">Burak Deniz</a>
+                            <a href="https://github.com/zinedburak">Burak Deniz</a>
                         </li>
                         <li class="col-4 btn-link">
-                            <a href="#">Cenker Karaörs</a>
+                            <a href="https://github.com/cenkerkaraors">Cenker Karaörs</a>
                         </li>
                         <li class="col-4 btn-link">
-                            <a href="#">Denizcan Özpınar</a>
+                            <a href="https://github.com/DenizcanOzpinar">Denizcan Özpınar</a>
                         </li>
                         <li class="col-4 btn-link">
-                            <a href="#">Barış Özbaş</a>
+                            <a href="https://github.com/barisozbas">Barış Özbaş</a>
                         </li>
                         <li class="col-4 btn-link">
-                            <a href="#">Emre Ay</a>
+                            <a href="https://github.com/mreay">Emre Ay</a>
                         </li>
                     </ul>
                 </div>
