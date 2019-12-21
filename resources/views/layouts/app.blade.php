@@ -149,5 +149,6 @@
     // Set the options to make LazyLoad self-initialize
 
 </script>
+@include('layouts.footer')
 </body>
 </html>
