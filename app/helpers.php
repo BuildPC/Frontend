@@ -14,7 +14,7 @@ function createItemCard($item){
                 </div>
        </div>';
 };
-function createBasketItemCard($item,$amount){
+function createBasketItemCard($item,$amount,$sum){
     echo '
     <tr>
         <th scope="row" class="border-0">
@@ -30,7 +30,7 @@ function createBasketItemCard($item,$amount){
         <td class="border-0 align-middle"><strong>'.$amount.'</strong></td>
         <td class="border-0 align-middle"><button class="sc_buttons" type="button" name="button" onclick="trashBtnAction('.$item->item_id.')"><i class="fas fa-trash"></i></button></td>
      </tr>';
-
+    return $sum + $item->price*$amount;
 
 
 
