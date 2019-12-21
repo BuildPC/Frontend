@@ -1,8 +1,8 @@
 @extends("layouts.app")
 @section('content')
     <div class="pb-5">
-        <div class="container">
-            <div class="row">
+        <div class="container sc_container">
+            <div class="row sc_content">
                 <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
                     <div class="table-responsive">
                         <table class="table">
@@ -19,6 +19,9 @@
                                 </th>
                                 <th scope="col" class="border-0 bg-light">
                                     <div class="py-2 text-uppercase">Amount</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Remove</div>
                                 </th>
                             </tr>
                             </thead>
