@@ -1,5 +1,19 @@
 @extends("layouts.app")
 @section('content')
+    <script>
+        function trashBtnAction(item){
+            let data = {
+                item_id:item
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/actions/remove',
+                data: data,
+                success: function(data) {location.reload() },
+                error: function(data){alert(JSON.stringify(data))}
+            })
+        }
+    </script>
     <div class="pb-5">
         <div class="container sc_container">
             <div class="row sc_content">

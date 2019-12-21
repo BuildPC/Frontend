@@ -29,5 +29,6 @@ Route::get('/shoppingCart','ShoppingCartController@ShoppingCart');
 Route::get('/item/{item}','ItemsController@index')->name('item');
 
 Route::post('/actions/add','ActionsController@add')->name('addItem');
+Route::post('/actions/remove','ActionsController@remove')->name('removeItem');
 
 Route::get('/user','UserController@index')->name('user');
