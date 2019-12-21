@@ -2,9 +2,6 @@
 /.idea
 /.vs
 /vendor
-public
-./public
-public/
 .env
 .env.backup
 .phpunit.result.cache
