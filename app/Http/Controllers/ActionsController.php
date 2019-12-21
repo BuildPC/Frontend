@@ -10,9 +10,14 @@ class ActionsController extends Controller
     /**
      * ActionsController constructor.
      */
+
     public function __construct()
     {
         $this->middleware("auth");
+    }
+    public function genral(){
+        $user = \Auth::user();
+        $user_mail = $user->email;
     }
 
     public function add(Request $request){
@@ -28,5 +33,12 @@ class ActionsController extends Controller
         $user_email = $user->email;
         $item_id = $request->input('item_id');
         \DB::select("call removeFromBasket(?,?)",array($user_email,$item_id));
+    }
+    public function checkout(Request $request)
+    {
+        $user = \Auth::user();
+        $user_email = $user->email;
+        \DB::select("call purchaseBasket(?)", array($user_email));
+
     }
 }

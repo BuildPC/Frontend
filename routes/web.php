@@ -30,5 +30,6 @@ Route::get('/item/{item}','ItemsController@index')->name('item');
 
 Route::post('/actions/add','ActionsController@add')->name('addItem');
 Route::post('/actions/remove','ActionsController@remove')->name('removeItem');
+Route::post('/actions/checkout','ActionsController@checkout')->name('checkout');
 
 Route::get('/user','UserController@index')->name('user');

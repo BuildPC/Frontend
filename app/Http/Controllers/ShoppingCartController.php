@@ -16,6 +16,7 @@ class ShoppingCartController extends Controller
         $basket_id = \DB::table('Basket')->where('username','=',$user_email)->max('basket_id');
         $BContains = \DB::table('BContains')->where('basket_id','=',$basket_id)->get();
         $item_id_array = [];
+        $total_price = 0;
         foreach ($BContains as $ContainedItems) {
             array_push($item_id_array, $ContainedItems->item_id);
             array_push($item_amount_array, $ContainedItems->amount);
