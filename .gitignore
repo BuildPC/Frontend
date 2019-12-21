@@ -2,11 +2,8 @@
 /.idea
 /.vs
 /vendor
-/public/hot
-/public/storage
 /storage/*.key
-/public/css
-/public/js
+/public
 .env
 .env.backup
 .phpunit.result.cache

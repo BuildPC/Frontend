@@ -28,6 +28,4 @@ Route::get('/shoppingCart','ShoppingCartController@ShoppingCart');
 //Route::get('/home', 'MainController@index')->name('home');
 Route::get('/item/{item}','ItemsController@index')->name('item');
 
-Route::post('/actions/add','ActionsController@add')->name('addItem');
-
 Route::get('/user','UserController@index')->name('user');

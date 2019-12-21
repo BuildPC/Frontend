@@ -16,11 +16,42 @@ function createItemCard($item){
 };
 function createBasketItemCard($item,$amount){
     // item özel düzenle
+//    echo '
+//   <div class="sc_item">
+//        <div class="sc_buttons">
+//            <span class="sc_delete-btn"></span>
+//        </div>
+//
+//    <div class="sc_image">
+//       <img data-src="https://static.buildpc.software/photos/' . $item->photo . '" width="20%" class="card-img-top lazy" alt="">
+//    </div>
+//
+//    <div class="sc_description">
+//      <span>Maison Margiela</span>
+//      <span>Future Sneakers</span>
+//      <span>White</span>
+//    </div>
+//
+//    <div class="sc_quantity">
+//      <button class="sc_plus-btn" type="button" name="button">
+//        <i class="fas fa-plus"></i>
+//      </button>
+//      <input type="text" name="name" value="1">
+//      <button class="sc_minus-btn" type="button" name="button">
+//        <i class="fas fa-minus"></i>
+//      </button>
+//    </div>
+//
+//    <div class="sc_total-price">'.$item->price*$amount.'₺</div>
+//   </div>
+//    ';
+
+
     echo '
     <tr>
         <th scope="row" class="border-0">
             <div class="p-2">
-                <img data-src="https://test.buildpc.software/photos/'.$item->photo.'" class="card-img-top lazy" alt="">
+                <img data-src="https://static.buildpc.software/photos/' . $item->photo . '" style="display:inline;width:10vw;height:100%"  class="card-img-top lazy" alt="">
                  <div class="ml-3 d-inline-block align-middle">
                     <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">'.$item->item_name.'</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
                  </div>
@@ -29,12 +60,8 @@ function createBasketItemCard($item,$amount){
         <td class="border-0 align-middle"><strong>'.$item->price.'₺</strong></td>
         <td class="border-0 align-middle"><strong>'.$item->price*$amount.'₺</strong></td>
         <td class="border-0 align-middle"><strong>'.$amount.'</strong></td>
-        <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+        <td class="border-0 align-middle"><button class="sc_buttons" type="button" name="button"><i class="fas fa-trash"></i></button></td>
+        
      </tr>';
-
-
-
-
-
 }
 
