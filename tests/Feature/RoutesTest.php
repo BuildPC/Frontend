@@ -10,29 +10,15 @@ use App\User;
 
 class RoutesTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function testExample()
-    {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-
     public function testHomePage(){
         $response = $this->get('/home');
         $response ->assertStatus(200);
     }
     public function testCategory(){
-        $response = $this->get('/category');
-        $response ->assertStatus(200);
-        $categoryCount = \DB::table('Category')->count();
-        //print ($categoryCount);
-        for($i = 0;$i<$categoryCount;$i++){
-            $response = $this->get('/category/'.$i.'');
+        $categories = \DB::table('Category')->get();
+        foreach ($categories as $category){
+            $category_id = $category->category;
+            $response = $this->get('/category/'.$category_id.'');
             $response->assertStatus(200);
         }
     }
@@ -57,11 +43,10 @@ class RoutesTest extends TestCase
         $response->assertStatus(200);
     }
     public function testItemPages(){
-        $item_count = \DB::table('Item')->count();
-        print ($item_count);
-
-        for ($i = 2;$i<=$item_count+1;$i++){
-            $response = $this->get('/item/'.$i.'');
+        $items = \DB::table('Item')->get();
+        foreach ($items as $item){
+            $item_id = $item->item_id;
+            $response = $this->get('/item/'.$item_id.'');
             $response ->assertStatus(200);
         }
     }
