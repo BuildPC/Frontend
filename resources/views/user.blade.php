@@ -21,10 +21,6 @@
         </div>
         <button type="button" data-toggle="popover" data-trigger="click" title="Change Password" data-html="true"
                 data-content='{{view('userActions.changepassword')}}' class="btn btn-dark">Change Password</button>
-
-        <button type="button" data-toggle="popover" data-trigger="click" title="Change Email" data-html="true"
-                data-content='{{view('userActions.changeemail')}}' class="btn btn-dark">Change Email</button>
-
     </div>
 
 
