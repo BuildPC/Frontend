@@ -20,7 +20,7 @@ function getRandomPhone(Faker $faker){
         $num = $num . $faker->randomDigit();
     }
     return $num;
-}
+};
 
 
 $factory->define(User::class, function (Faker $faker) {
