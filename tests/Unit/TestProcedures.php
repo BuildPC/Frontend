@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use mysql_xdevapi\Statement;
 use Tests\TestCase;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use DB;
+use function GuzzleHttp\Promise\all;
 
 class TestProcedures extends TestCase
 {
@@ -31,13 +33,19 @@ class TestProcedures extends TestCase
     {
         DB::beginTransaction();
 
-        $initial_table = \DB::table('BContains')->where('basket_id', '=',12);
-        $this->assertTrue("1" == $initial_table->count('item_id'));
+        $user = factory(User::class)->create(); // Test User
+        //echo $user->email;
 
-        \DB::select('call addBasket(?,?,?)',array("test.user@ozu.edu.tr","33","1"));
+        $basket = \DB::table('Basket')->where('username', '=',$user->email)->orderBy('basket_id','desc')->first(); // Recent Basket
+        //echo $basket->basket_id;
 
-        $table = \DB::table('BContains')->where('basket_id', '=',12);
-        $this->assertTrue("2" == $table->count('item_id'));
+        $initial_table = \DB::table('BContains')->where('basket_id', '=',$basket->basket_id);
+        $count = $initial_table->count('item_id');
+
+        \DB::select('call addBasket(?,?,?)',array($user->email,"33","1"));
+
+        $table = \DB::table('BContains')->where('basket_id', '=',$basket->basket_id);
+        $this->assertTrue($count + 1 == $table->count('item_id'));
 
         DB::rollBack();
     }
@@ -45,9 +53,14 @@ class TestProcedures extends TestCase
     public function testPurchase() // Checks method purchaseBasket
     {
         DB::beginTransaction();
-        \DB::select('call purchaseBasket(?)',array("test.user@ozu.edu.tr"));
-        $user = \DB::table('History')->where('basket_id', '12')->first();
-        $this->assertTrue("12" == $user->basket_id);
+
+        $user = factory(User::class)->create(); // Test User
+        $basket = \DB::table('Basket')->where('username', '=',$user->email)->orderBy('basket_id','desc')->first(); // Recent Basket
+
+        \DB::select('call purchaseBasket(?)',array($user->email));
+        $user = \DB::table('History')->where('basket_id', $basket->basket_id)->first();
+        $this->assertTrue($basket->basket_id == $user->basket_id);
+
         DB::rollBack();
     }
 }
