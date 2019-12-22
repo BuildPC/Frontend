@@ -15,10 +15,6 @@ class ActionsController extends Controller
     {
         $this->middleware("auth");
     }
-    public function genral(){
-        $user = \Auth::user();
-        $user_mail = $user->email;
-    }
 
     public function add(Request $request){
         $user = \Auth::user();

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Http\Controllers\PreviousOrdersController;
 use App\User;
 use Illuminate\Foundation\Testing\WithFaker;
 use Str;
@@ -243,7 +244,15 @@ class ReportTests extends TestCase
 
     public function testPurchaseHistory()
     {
-
+        $user = factory(User::class)->create();
+        $this->post(route('addItem'), [
+            'item_id' => 1,
+            'amount' =>1
+    ]);
+        $this->post(route('checkout'),[]);
+        $response = $this->actingAs($user)
+            ->get('/orders');
+        $response ->assertStatus(200);
 
     }
 
