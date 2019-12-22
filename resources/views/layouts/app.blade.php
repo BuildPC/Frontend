@@ -144,7 +144,7 @@
         lazyLoadInstance.update();
     }
 
-    setTimeout(loadLazy, 1);
+    setTimeout(loadLazy, 50);
 
     // Set the options to make LazyLoad self-initialize
 
