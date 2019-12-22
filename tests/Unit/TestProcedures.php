@@ -58,8 +58,33 @@ class TestProcedures extends TestCase
         $basket = \DB::table('Basket')->where('username', '=',$user->email)->orderBy('basket_id','desc')->first(); // Recent Basket
 
         \DB::select('call purchaseBasket(?)',array($user->email));
+
         $user = \DB::table('History')->where('basket_id', $basket->basket_id)->first();
         $this->assertTrue($basket->basket_id == $user->basket_id);
+
+        DB::rollBack();
+    }
+
+    public function testRemoveFromBasket() // Checks method removeFromBasket
+    {
+        DB::beginTransaction();
+
+        $user = factory(User::class)->create(); // Test User
+        $basket = \DB::table('Basket')->where('username', '=',$user->email)->orderBy('basket_id','desc')->first(); // Recent Basket
+
+        \DB::select('call addBasket(?,?,?)',array($user->email,"33","1")); // Adds item to basket
+        \DB::select('call addBasket(?,?,?)',array($user->email,"34","1")); // Adds item to basket
+
+        $initial_table = \DB::table('BContains')->where('basket_id', '=',$basket->basket_id);
+        $count = $initial_table->count('item_id');
+        //echo $initial_table->count('item_id');
+
+        \DB::select('call removeFromBasket(?,?)',array($user->email,33)); // Removes item from basket
+
+        $table = \DB::table('BContains')->where('basket_id', '=',$basket->basket_id);
+        $this->assertTrue($count - 1 == $table->count('item_id'));
+
+        //echo $table->count('item_id');
 
         DB::rollBack();
     }
