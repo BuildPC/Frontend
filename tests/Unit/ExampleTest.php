@@ -18,4 +18,13 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    public function testCreateItemCard()
+    {
+
+        $items = \Illuminate\Support\Facades\DB::table("Item")->get();
+        foreach ($items as $item) {
+            $this->assertTrue(!$this->expectError(createItemCard($item)));
+        }
+    }
 }
