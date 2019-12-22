@@ -34,8 +34,5 @@ function createBasketItemCard($item,$amount,$sum){
      </tr>';
     return $sum + $item->price*$amount;
 
-
-
-
-}
+};
 
