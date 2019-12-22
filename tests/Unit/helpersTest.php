@@ -31,9 +31,12 @@ class helpersTest extends TestCase
     public function testCreateBasketItemCard(){
         $this->setOutputCallback(function(){});
         $items =\DB::table("Item")->get();
+        $sum = \DB::table('Item')->sum('price');
+        $tmp = 0;
         foreach ($items as $item){
-            $this->assertNull(createBasketItemCard($item,1,0));
+            $tmp = createBasketItemCard($item,1,$tmp);
         }
+        $this->assertTrue(number_format($sum,2) == number_format($tmp,2));
     }
 
 }
