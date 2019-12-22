@@ -23,10 +23,12 @@ class RoutesTest extends TestCase
         }
     }
     public function testUserPage(){
+       \DB::beginTransaction();
         $user = factory(User::class)->create();
         $response = $this->actingAs($user)
                         ->get('/user');
         $response->assertStatus(200);
+        \DB::rollBack();
     }
     public function testLoginPage(){
         $response = $this->get('/login');
@@ -37,10 +39,12 @@ class RoutesTest extends TestCase
         $response ->assertStatus(200);
     }
     public function testShoppingCart(){
+        \DB::beginTransaction();
         $user = factory(User::class)->create();
         $response = $this->actingAs($user)
             ->get('/shoppingCart');
         $response->assertStatus(200);
+        \DB::rollBack();
     }
     public function testItemPages(){
         $items = \DB::table('Item')->get();

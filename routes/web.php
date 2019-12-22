@@ -24,6 +24,7 @@ Auth::routes();
 Route::get('/category','CategoryController@getItems');
 Route::get('/category/{category_id}','CategoryController@getItems')->name('category_id');
 Route::get('/shoppingCart','ShoppingCartController@ShoppingCart');
+Route::get('/sex','PreviousOrdersController@PreviousOrders');
 
 //Route::get('/home', 'MainController@index')->name('home');
 Route::get('/item/{item}','ItemsController@index')->name('item');
