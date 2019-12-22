@@ -37,6 +37,7 @@ Route::post('password/reset','Auth\ResetPasswordController@reset')->name('passwo
 Route::get('/category', 'CategoryController@getItems');
 Route::get('/category/{category_id}', 'CategoryController@getItems')->name('category_id');
 Route::get('/shoppingCart', 'ShoppingCartController@ShoppingCart');
+Route::get('/orders','PreviousOrdersController@PreviousOrders')->name('previousOrder');
 
 //Route::get('/home', 'MainController@index')->name('home');
 Route::get('/item/{item}', 'ItemsController@index')->name('item');
