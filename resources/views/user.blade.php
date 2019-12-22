@@ -19,10 +19,14 @@
             <h1 class="pr-1" style="color:#ff631a">Account last updated at: </h1>
             <h1>  {{Auth::user()->updated_at}}</h1>
         </div>
-        <h1> <h1>
-                <button type="button" class="btn btn-dark">Change Password</button>
-                <button type="button" class="btn btn-dark">Change Email</button>
+        <button type="button" data-toggle="popover" data-trigger="click" title="Change Password" data-html="true"
+                data-content='{{view('userActions.changepassword')}}' class="btn btn-dark">Change Password</button>
+
+        <button type="button" data-toggle="popover" data-trigger="click" title="Change Email" data-html="true"
+                data-content='{{view('userActions.changeemail')}}' class="btn btn-dark">Change Email</button>
+
     </div>
+
 
 
 

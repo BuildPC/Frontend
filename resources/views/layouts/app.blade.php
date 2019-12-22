@@ -20,7 +20,10 @@
     <script src="https://kit.fontawesome.com/1539a4ad66.js" crossorigin="anonymous"></script>
     <script>
         $(function () {
-            $('[data-toggle="popover"]').popover()
+            $('[data-toggle="popover"]').popover({
+                html:true,
+                sanitize:false
+            })
         });
     </script>
 
