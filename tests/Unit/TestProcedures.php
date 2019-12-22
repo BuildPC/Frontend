@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use DB;
 
-class TestC extends TestCase
+class TestProcedures extends TestCase
 {
     //TODO the following code wipes the DB everytime the test runs! ooops... See https://laracasts.com/discuss/channels/laravel/laravel-phpunit-drops-database-tables the link for how to do it properly.
 //    use RefreshDatabase;
@@ -21,10 +21,11 @@ class TestC extends TestCase
      *
      * @return void
      */
-    public function testC()
+
+    /*public function testProcedure()
     {
        $this->assertTrue(true);
-    }
+    }*/
 
     public function testAddBasket() // Checks method addBasket(adds item to basket)
     {
