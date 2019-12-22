@@ -48,7 +48,7 @@
                                     <div class="py-2 text-uppercase">Amount</div>
                                 </th>
                                 <th scope="col" class="border-0 bg-light">
-                                    <div class="py-2 text-uppercase">Remove</div>
+                                    <div class="py-2    text-uppercase">Remove</div>
                                 </th>
                             </tr>
                             </thead>
