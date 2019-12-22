@@ -14,13 +14,16 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
-function getRandomPhone(Faker $faker){
-    $num = "0";
-    for($i = 0; $i<10;++$i) {
-        $num = $num . $faker->randomDigit();
+if(!function_exists('getRandomPhone')) {
+    function getRandomPhone(Faker $faker)
+    {
+        $num = "0";
+        for ($i = 0; $i < 10; ++$i) {
+            $num = $num . $faker->randomDigit();
+        }
+        return $num;
     }
-    return $num;
-};
+}
 
 
 $factory->define(User::class, function (Faker $faker) {
