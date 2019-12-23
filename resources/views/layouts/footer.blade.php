@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="font-small blue" style="  position: fixed;
+<footer class="font-small blue border-top" style="  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
