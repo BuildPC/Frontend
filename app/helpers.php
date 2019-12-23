@@ -1,6 +1,5 @@
 <?php
 function createItemCard($item){
-    //TODO see line 6 and remove hardcoded linking!
     echo '
         <a class="card-link-wrapper" href="/item/'.$item->item_id.'">
             <div class="card">
@@ -35,4 +34,13 @@ function createBasketItemCard($item,$amount,$sum){
     return $sum + $item->price*$amount;
 
 };
-
+function array_sum_r($needle,$haystack){
+    $sum = 0;
+    $array_obj = new RecursiveIteratorIterator(new RecursiveArrayIterator($haystack));
+    foreach ($array_obj as $key => $value) {
+        if ($key == $needle) {
+            $sum += (float)str_replace(',','',$value);
+        }
+    }
+    return $sum;
+};

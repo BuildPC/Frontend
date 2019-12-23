@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Psr\Http\Message\ResponseInterface;
 
 class PreviousOrdersController extends Controller
 {
@@ -10,26 +11,22 @@ class PreviousOrdersController extends Controller
     {
         $this->middleware('auth');
     }
-    public function PreviousOrders(){
-        $basket_idArray = [];
-        $dummy_Array = [];
+
+    public function PreviousOrders()
+    {
+//        $basket_idArray = [];
         $user_email = \Auth::user()->email;
-        $basket_ids = \DB::table('History')->select('basket_id')->where('username','=',$user_email)->get();
-        foreach ($basket_ids as $basket_id){
-            array_push($basket_idArray,$basket_id->basket_id);
-        }
-
-        $items_baskets = \DB::table('BContains')->select(array('basket_id','item_id'))->whereIn('basket_id',$basket_idArray)->groupBy('basket_id','item_id')->get();
-//        foreach ($items_baskets as $basket_id){
-//           foreach ($basket_id->item_id as $item){
-//               $dummy_Array[$basket_id] = [$item];
-//            }
-//        }
-
-//        $basket_idsraw = \DB::table('Basket')->where('username' ,'=',$user_email)->get();
-//        $basket_ids = \DB::table('History')->whereIn('basket_id',$basket_idsraw)->get();
-//        $user_baskets = \DB::table('BContains')->whereIn('basket_id',$basket_ids);
-//        dd($items_baskets);
-        return view('previousOrder',['items'=>$items_baskets]);
+        $baskets = \DB::table('History')->leftJoin('BContains', 'History.basket_id', '=', 'BContains.basket_id')
+            ->leftJoin('Item','BContains.item_id','Item.item_id')
+            ->select('History.basket_id','History.date', 'BContains.item_id','Item.item_name', 'BContains.amount','Item.price')
+            ->where('History.username', '=', $user_email)
+            ->get()->groupBy('basket_id')
+            ->map(function ($group) {
+                return $group->map(function ($value) {
+                    return ["item_id" => $value->item_id,'item_name'=>$value->item_name, "amount" => $value->amount,"total_price" => number_format($value->amount*$value->price,2),
+                        "date"=>\Carbon\Carbon::parse($value->date)->format('d/m/Y')];
+                });
+            });
+            return view('previousOrder',['baskets'=>$baskets]);
     }
 }
