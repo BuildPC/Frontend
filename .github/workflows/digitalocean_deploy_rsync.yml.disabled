@@ -1,4 +1,3 @@
-#gotta work rn
 name: DigitalOcean_Deploy_rsync
 
 on:
